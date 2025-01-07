@@ -130,18 +130,12 @@ const EditProfileModal = ({ authUser }) => {
               </div>
             </div>
             <div className="flex justify-between items-center">
-              <button
-                type="submit"
-                className="py-2 px-4 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition-colors duration-200"
-                disabled={isUpdatingProfile}
-              >
-                {isUpdatingProfile ? "Updating..." : "Update Profile"}
-              </button>
-              <button
-                type="button"
-                onClick={closeModal}
-                className="py-2 px-4 bg-red-600 text-white rounded-full font-bold hover:bg-red-700 transition-colors duration-200"
-              >
+              {formData.email === "test1@gmail.com" ? (null) : (
+                <button type="submit" className="py-2 px-4 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 transition-colors duration-200" disabled={isUpdatingProfile}>
+                  {isUpdatingProfile ? "Updating..." : "Update Profile"}
+                </button>
+              )}
+              <button type="button" onClick={closeModal} className="py-2 px-4 bg-red-600 text-white rounded-full font-bold hover:bg-red-700 transition-colors duration-200">
                 Close
               </button>
             </div>
